@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Api\V1;
 
+use App\Permissions\V1\Abilities;
 use Illuminate\Foundation\Http\FormRequest;
 
 class BaseTicketRequest extends FormRequest
@@ -14,7 +15,7 @@ class BaseTicketRequest extends FormRequest
             'data.attributes.status' => 'status',
             'data.attributes.createdAt' => 'created_at',
             'data.attributes.updatedAt' => 'updated_at',
-            //    'data.relationships.author.data.id ' => 'user_id',
+            'data.relationships.author.data.id' => 'user_id',
         ];
 
         $attributesToUpdate = [];
